@@ -17,19 +17,22 @@ const fileSystemLogRepository = new LogRepositoryImpl(
 
 export class Server {
     public static start(){
+
         console.log("Server started...");
 
-        CronService.createJob(
-            '*/5 * * * * *',
-            () => {
-                const url = 'https://google.com'
-                new CheckService(
-                    fileSystemLogRepository,
-                    () => console.log(`Service ${url} is ok`),
-                    ( error ) => console.log(error),
-                ).execute( url );
-                // new CheckService().execute( 'http://localhost:3000' );
-            }
-        ); 
+        //Mandar E-mail
+
+        // CronService.createJob(
+        //     '*/5 * * * * *',
+        //     () => {
+        //         const url = 'https://google.com'
+        //         new CheckService(
+        //             fileSystemLogRepository,
+        //             () => console.log(`Service ${url} is ok`),
+        //             ( error ) => console.log(error),
+        //         ).execute( url );
+        //         // new CheckService().execute( 'http://localhost:3000' );
+        //     }
+        // ); 
     }
 }

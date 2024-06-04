@@ -7,6 +7,6 @@ import { Server } from "./presentation/server";
 })();
 
 function main(){
-    // Server.start();
+    Server.start();
     // console.log(envs.MAILER_EMAIL)
 }
