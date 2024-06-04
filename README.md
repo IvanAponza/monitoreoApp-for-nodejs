@@ -8,7 +8,7 @@ npm install
 
 ## Run and execute the applications
 
-1. developmen
+1. development
 
 ```
 npm run dev
