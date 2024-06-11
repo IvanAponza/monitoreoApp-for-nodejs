@@ -13,6 +13,7 @@ export interface LogEntityOptions {
 }
 
 export class LogEntity {
+    
     public level: LogSeverityLevel; //Enum
     public message: string;
     public origin: string;
@@ -21,6 +22,7 @@ export class LogEntity {
     constructor(options: LogEntityOptions){
 
         const { message, level, origin, createdAt = new Date() } = options;
+
         this.message = message;
         this.level = level;
         this.createdAt = new Date();
@@ -28,16 +30,13 @@ export class LogEntity {
     }
 
     //convierte la data a form json de los logs 
-    static fromJson = ( json: string): LogEntity => {
-        const { message, level, createdAt, origin } = JSON.parse(json);
-        if( !message || !level) throw new Error('Invalid log data');
+    static fromJson = ( json: string ): LogEntity => {
 
-        const log = new LogEntity({
-            message, 
-            level,
-            createdAt,
-            origin,
-        });
+        const { message, level, createdAt, origin } = JSON.parse(json);
+
+        if( !message || !level ) throw new Error('Invalid log data');
+
+        const log = new LogEntity({ message, level, createdAt, origin });
 
         return log;
     }
