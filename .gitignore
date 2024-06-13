@@ -5,8 +5,8 @@ dist/
 .DS_Store
 
 #logs
-logs/*
+logs/
 
 .env
 
-
+mongo/
