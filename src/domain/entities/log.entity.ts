@@ -32,7 +32,21 @@ export class LogEntity {
     //convierte la data a form json de los logs 
     static fromJson = ( json: string ): LogEntity => {
 
+        json = (json === '') ? '{}': json;
+
         const { message, level, createdAt, origin } = JSON.parse(json);
+
+        if( !message || !level ) throw new Error('Invalid log data');
+
+        const log = new LogEntity({ message, level, createdAt, origin });
+
+        return log;
+    }
+
+    //factory funtions para transformar los datos (mapper)
+    static fromObject = (object: {[key: string]: any}):LogEntity => {
+
+        const { message, level, createdAt, origin } = object;
 
         if( !message || !level ) throw new Error('Invalid log data');
 

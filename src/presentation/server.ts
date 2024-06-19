@@ -2,13 +2,15 @@ import { envs } from "../config/adapter/envs";
 import { CheckService } from "../domain/use-cases/check/check-service";
 import { SendEmailLogs } from "../domain/use-cases/email/send-email-log";
 import { FileSystemDatasource } from "../infrastructure/datasource/fs-datasource";
+import { MongoLogDatasource } from "../infrastructure/datasource/mongo.log.datasource";
 import { LogRepositoryImpl } from "../infrastructure/repositories/fs-repository.impl";
 import { CronService } from "./cron/cron-service";
 import { EmailService } from "./email/email.service";
 
 //crea las instancias de las implements
-const fileSystemLogRepository = new LogRepositoryImpl( 
+const logRepository = new LogRepositoryImpl( 
     new FileSystemDatasource(),
+    // new MongoLogDatasource(),
 );
 
 const emailService = new EmailService();
@@ -55,17 +57,17 @@ export class Server {
         // )
 
 
-        // CronService.createJob(
-        //     '*/5 * * * * *',
-        //     () => {
-        //         const url = 'https://google.com'
-        //         new CheckService(
-        //             fileSystemLogRepository,
-        //             () => console.log(`Service ${url} is ok`),
-        //             ( error ) => console.log(error),
-        //         ).execute( url );
-        //         // new CheckService().execute( 'http://localhost:3000' );
-        //     }
-        // ); 
+        CronService.createJob(
+            '*/5 * * * * *',
+            () => {
+                const url = 'https://google.com'
+                new CheckService(
+                    logRepository,
+                    () => console.log(`Service ${url} is ok`),
+                    ( error ) => console.log(error),
+                ).execute( url );
+                // new CheckService().execute( 'http://localhost:3000' );
+            }
+        ); 
     }
 }
