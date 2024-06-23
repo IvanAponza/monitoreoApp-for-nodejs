@@ -57,17 +57,17 @@ export class Server {
         // )
 
 
-        CronService.createJob(
-            '*/5 * * * * *',
-            () => {
-                const url = 'https://google.com'
-                new CheckService(
-                    logRepository,
-                    () => console.log(`Service ${url} is ok`),
-                    ( error ) => console.log(error),
-                ).execute( url );
-                // new CheckService().execute( 'http://localhost:3000' );
-            }
-        ); 
+        // CronService.createJob(
+        //     '*/5 * * * * *',
+        //     () => {
+        //         const url = 'https://google.com'
+        //         new CheckService(
+        //             logRepository,
+        //             () => console.log(`Service ${url} is ok`),
+        //             ( error ) => console.log(error),
+        //         ).execute( url );
+        //         // new CheckService().execute( 'http://localhost:3000' );
+        //     }
+        // ); 
     }
 }

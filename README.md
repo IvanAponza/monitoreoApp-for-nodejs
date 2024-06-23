@@ -33,3 +33,10 @@ npm run dev
 ```
 npm start
 ```
+
+4. Levantar las bases de datos con el comando
+
+```
+docker compose up -d
+
+```
