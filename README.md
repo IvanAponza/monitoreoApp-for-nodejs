@@ -2,41 +2,29 @@
 
 The goal is to create a clean architecture task monitoring application with typeScript - El objetivo es crear una aplicación de monitoreo de tareas con arquitectura limpia con typeScript
 
-## 🚀 Installation - Instalación
+# dev
+1. Duplicar el archivo .env.template y renombrar a .env
+2. Configurar las Variables de entorno en .env
+3. Insatalar las dependencias con el comando
+    ```
+    npm install
 
-```
-npm install
-```
-
-## Run and execute the application - Correr y ejecutar la aplicación
-
-1. development
-
-```
-npm run dev
-```
-2. Configure environment variables - Configurar las variables de entorno
-    - create a .env file with the following - crear un archivo .env con lo siguiente.
-    
-    ````
-    PORT=3000
-
-    PROD=false
-
-    MAILER_EMAIL=
-    MAILER_SECRET_KEY=
-
-    ````
-
-3. Production
-
-```
-npm start
-```
-
+    ```
 4. Levantar las bases de datos con el comando
+    ```
+    docker compose up -d
 
-```
-docker compose up -d
+    ```
+5. Ejecutar el comando para crear las migraciones i egeneral Prisma Client
+    ````
+    npx prisma migrate dev
 
-```
+    ```
+6. Levantar el servidor con el comando 
+    ```
+    npm run dev
+    
+    ```
+
+## Obtener Gmail Key
+[Google AppPasswords](https://myaccount.google.com/u/0/apppasswords)

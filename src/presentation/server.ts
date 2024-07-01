@@ -85,16 +85,16 @@ export class Server {
         // ); 
 
         //Guardar en multiples DB
-        CronService.createJob(
-            '*/5 * * * * *',
-            () => {
-                const url = 'https://google.com'
-                new CheckServiceMultiple(
-                    [fslogRepository, mongologRepository, postgreslogRepository],
-                    () => console.log(`Service ${url} is ok`),
-                    ( error ) => console.log(error),
-                ).execute( url );
-            }
-        ); 
+        // CronService.createJob(
+        //     '*/5 * * * * *',
+        //     () => {
+        //         const url = 'https://google.com'
+        //         new CheckServiceMultiple(
+        //             [fslogRepository, mongologRepository, postgreslogRepository],
+        //             () => console.log(`Service ${url} is ok`),
+        //             ( error ) => console.log(error),
+        //         ).execute( url );
+        //     }
+        // ); 
     }
 }
