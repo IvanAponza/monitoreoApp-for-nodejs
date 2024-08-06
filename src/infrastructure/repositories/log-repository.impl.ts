@@ -11,8 +11,8 @@ export class LogRepositoryImpl implements LogRepository {
         private readonly logDatasource: LogDatasource,
     ) { }
 
-    async seveLog(log: LogEntity): Promise<void> {
-        return this.logDatasource.seveLog(log)
+    async saveLog(log: LogEntity): Promise<void> {
+        return this.logDatasource.saveLog(log)
     }
 
     async getLogs(severityLevel: LogSeverityLevel): Promise<LogEntity[]> {

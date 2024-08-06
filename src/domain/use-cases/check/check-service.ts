@@ -31,7 +31,7 @@ export class CheckService implements CheckServiceUseCase {
                 origin: 'check-service.ts'
             });
 
-            this.logRepository.seveLog(log);
+            this.logRepository.saveLog(log);
 
             this.successCallback && this.successCallback(); //condicional si existe successCallback mando a lllamar 
             // console.log(`Service ${ url } is ok`);
@@ -45,7 +45,7 @@ export class CheckService implements CheckServiceUseCase {
                 level: LogSeverityLevel.error, 
                 origin: 'check-service.ts'
             });
-            this.logRepository.seveLog(log);
+            this.logRepository.saveLog(log);
 
             this.errorCallback && this.errorCallback(errorMessage);//condicional si existe errorCallback mando a lllamar 
             

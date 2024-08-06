@@ -12,10 +12,10 @@ describe('Prueas en envs.ts', () => {
             MAILER_SERVICE: 'gmail',
             MAILER_EMAIL: 'aponzacantoni@gmail.com',
             MAILER_SECRET_KEY: 'rfdffdxnuhotxlmo',
-            MONGO_URL: 'mongodb+srv://ivanaponza:ic123456789@cluster0.yyvogrg.mongodb.net/',
+            MONGO_URL: 'mongodb+srv://ivanaponza:ic123456@cluster0.yyvogrg.mongodb.net/',
             MONGO_DB_NAME: 'NOC-TEST',
             MONGO_USER: 'ivanaponza',
-            MONGO_PASS: 'ic123456789'
+            MONGO_PASS: 'ic123456'
         })
     })
 

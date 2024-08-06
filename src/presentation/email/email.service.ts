@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import { envs } from '../../config/adapter/envs';
 import { LogEntity, LogSeverityLevel } from '../../domain/entities/log.entity';
 
-interface SendMailOptions {
+export interface SendMailOptions {
     to: string | string[];
     subject: string;
     html: string;
@@ -10,7 +10,7 @@ interface SendMailOptions {
 }
 
 //Attachements
-interface Attachements {
+export interface Attachements {
     filename: string;
     path: string;
 }

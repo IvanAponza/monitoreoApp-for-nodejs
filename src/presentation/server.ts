@@ -5,7 +5,7 @@ import { SendEmailLogs } from "../domain/use-cases/email/send-email-log";
 import { FileSystemDatasource } from "../infrastructure/datasource/fs-datasource";
 import { MongoLogDatasource } from "../infrastructure/datasource/mongo.log.datasource";
 import { PostgreLogDatasource } from "../infrastructure/datasource/postgre.log.datasource";
-import { LogRepositoryImpl } from "../infrastructure/repositories/fs-repository.impl";
+import { LogRepositoryImpl } from "../infrastructure/repositories/log-repository.impl";
 import { CronService } from "./cron/cron-service";
 import { EmailService } from "./email/email.service";
 

@@ -13,7 +13,7 @@ const severityEnum = {
 
 export class PostgreLogDatasource implements LogDatasource {
 
-    async seveLog(log: LogEntity): Promise<void> {
+    async saveLog(log: LogEntity): Promise<void> {
 
         const level = severityEnum[log.level]; //Ahora tenemos la enum q viene de Postgre
 

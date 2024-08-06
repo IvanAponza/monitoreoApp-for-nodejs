@@ -31,15 +31,15 @@ export class FileSystemDatasource implements LogDatasource {
     }
 
 
-    async seveLog(log: LogEntity): Promise<void> {
+    async saveLog(newLog: LogEntity): Promise<void> {
 
-        const logAsJson = `${JSON.stringify(log)}\n`
+        const logAsJson = `${JSON.stringify(newLog)}\n`;
 
         fs.appendFileSync( this.allLogsPath, logAsJson );
 
-        if( log.level === LogSeverityLevel.low ) return;
+        if( newLog.level === LogSeverityLevel.low ) return;
 
-        if( log.level === LogSeverityLevel.medium ){ 
+        if( newLog.level === LogSeverityLevel.medium ){ 
             //si ellog es level medium lo guarda en dir mediumLogsPath
             fs.appendFileSync(this.mediumLogsPath, logAsJson);
         }else{

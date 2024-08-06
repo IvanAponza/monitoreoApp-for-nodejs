@@ -19,7 +19,7 @@ export class CheckServiceMultiple implements CheckServiceMultipleUseCase {
     //Metodo para recorrer el logRepository llama al metodo saveLog y guarda
     private callLogsRepository( log: LogEntity ){
         this.logRepository.forEach( logRepository => {
-            logRepository.seveLog(log);
+            logRepository.saveLog(log);
         })
     }
 

@@ -27,7 +27,7 @@ export class SendEmailLogs implements SendLogEmailUseCase {
                 message: `Log email sent`,
                 origin: 'send-email-log.ts',
             })
-            this.logRepository.seveLog(log);
+            this.logRepository.saveLog(log);
 
             return true;
             } catch (error) {
@@ -37,7 +37,7 @@ export class SendEmailLogs implements SendLogEmailUseCase {
                 message: `${error}`,
                 origin: 'send-email-log.ts',
             })
-            this.logRepository.seveLog(log);
+            this.logRepository.saveLog(log);
 
             return false;
             

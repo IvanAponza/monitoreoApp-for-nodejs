@@ -25,6 +25,12 @@ The goal is to create a clean architecture task monitoring application with type
     npm run dev
     
     ```
+7. Ejecutar las pruebas 
+
+    ````
+        npm run test:watch
+
+    ````
 
 ## Obtener Gmail Key
 [Google AppPasswords](https://myaccount.google.com/u/0/apppasswords)
